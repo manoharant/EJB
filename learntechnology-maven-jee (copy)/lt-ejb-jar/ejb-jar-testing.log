@@ -1,0 +1,6 @@
+08/04/13 11:32:48 AM  INFO  net.learntechnology.persistence.UserDAOTest runBeforeClass - runBeforeClass
+08/04/13 11:32:48 AM  INFO  net.learntechnology.persistence.BaseTest setUp - retrieving EntityManager: test-hsqldb
+08/04/13 11:32:49 AM  DEBUG net.learntechnology.persistence.UserDAOTest getUsers - getting users
+08/04/13 11:32:49 AM  DEBUG net.learntechnology.persistence.dao.UserDAOBean getUsers - getUsers
+08/04/13 11:32:49 AM  INFO  net.learntechnology.persistence.UserDAOTest runAfterClass - runAfterClass
+08/04/13 11:32:49 AM  INFO  net.learntechnology.persistence.BaseTest tearDown - closing EntityManagerFactory

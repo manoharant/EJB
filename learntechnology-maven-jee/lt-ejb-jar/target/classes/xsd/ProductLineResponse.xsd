@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://server.jaxws.aam.com/"
+	xmlns:tns="http://server.jaxws.aam.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="findProductLineByID" type="tns:findProductLineByID"></xs:element>
+
+	<xs:element name="findByProductLineIDResponse" type="tns:findByProductLineIDResponse">
+	</xs:element>
+
+
+	<xs:complexType name="findProductLineByID">
+		<xs:sequence>
+			<xs:element name="productLineID" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="findByProductLineIDResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:getProductLineDetail"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getProductLineDetail">
+		<xs:sequence>
+			<xs:element name="productLine">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="textDescription" nillable="true"
+				minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="htmlDescription" nillable="true"
+				minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16777215" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="image" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:base64Binary">
+						<xs:maxLength value="16777215" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="addProductLineRequestDetail">
+		<xs:sequence>
+			<xs:element name="productLine">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="textDescription" nillable="true"
+				minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="htmlDescription" nillable="true"
+				minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16777215" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="image" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:base64Binary">
+						<xs:maxLength value="16777215" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

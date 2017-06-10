@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+  <description>web site</description>
+  
+  <servlet>
+      <servlet-name>FacesServlet</servlet-name>
+      <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+      <servlet-name>FacesServlet</servlet-name>
+      <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+
+  <ejb-local-ref>
+    <ejb-ref-name>ejb/NewsLocalDAO</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local-home>com.foshanshop.dao.NewsLocalDAO</local-home>
+    <local>com.foshanshop.dao.NewsLocalDAO</local>
+    <ejb-link>NewsDAOBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>ejb/CatalogLocalDAO</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local-home>com.foshanshop.dao.CatalogLocalDAO</local-home>
+    <local>com.foshanshop.dao.CatalogLocalDAO</local>
+    <ejb-link>CatalogDAOBean</ejb-link>
+  </ejb-local-ref>
+  
+  <session-config>
+      <session-timeout>18</session-timeout>
+  </session-config>
+
+  <welcome-file-list>
+      <welcome-file>index.jsp</welcome-file>      
+  </welcome-file-list> 
+</web-app>

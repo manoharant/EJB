@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/26/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/core
+END
+BaseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/26/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/core/BaseDao.java
+END
+BaseDaoImp.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/23/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/core/BaseDaoImp.java
+END
+Indexable.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/23/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/core/Indexable.java
+END

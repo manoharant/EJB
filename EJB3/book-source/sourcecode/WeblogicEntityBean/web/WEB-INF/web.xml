@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+   <description>foshanshop ejb3.0 Sample</description>
+   
+   <ejb-local-ref>
+    <ejb-ref-name>ejb/PersonDAOLocal</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local>com.foshanshop.ejb3.PersonDAOLocal</local>
+    <ejb-link>PersonDAOBean</ejb-link>
+  </ejb-local-ref>
+  
+  <welcome-file-list>
+      <welcome-file>Test.jsp</welcome-file>      
+  </welcome-file-list> 
+</web-app>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://server.jaxws.aam.com/"
+	xmlns:tns="http://server.jaxws.aam.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="findProductByID" type="tns:findProductByID"></xs:element>
+
+	<xs:element name="findByProductIDResponse" type="tns:findByProductIDResponse">
+	</xs:element>
+
+
+	<xs:complexType name="findProductByID">
+		<xs:sequence>
+			<xs:element name="productID" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="findByProductIDResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:getProductDetail"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getProductDetail">
+		<xs:sequence>
+			<xs:element name="productCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productLine">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productScale">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productVendor">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productDescription">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="65535" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="quantityInStock">
+				<xs:simpleType>
+					<xs:restriction base="xs:short">
+						<xs:minInclusive value="-32768" />
+						<xs:maxInclusive value="32767" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="buyPrice">
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="-1.7976931348623157e+308" />
+						<xs:maxExclusive value="1.7976931348623157e+308" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MSRP">
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="-1.7976931348623157e+308" />
+						<xs:maxExclusive value="1.7976931348623157e+308" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="addProductRequestDetail">
+		<xs:sequence>
+			<xs:element name="productName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productLine">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productScale">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productVendor">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="productDescription">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="65535" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="quantityInStock">
+				<xs:simpleType>
+					<xs:restriction base="xs:short">
+						<xs:minInclusive value="-32768" />
+						<xs:maxInclusive value="32767" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="buyPrice">
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="-1.7976931348623157e+308" />
+						<xs:maxExclusive value="1.7976931348623157e+308" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MSRP">
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="-1.7976931348623157e+308" />
+						<xs:maxExclusive value="1.7976931348623157e+308" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

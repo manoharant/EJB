@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- EJB3 WSClient build file                                                -->
+<!-- ======================================================================= -->
+<project name="WSClient" default="wsclientgen" basedir="..">
+	<property name="app.dir" value="${basedir}/WSClient" />
+	<property name="src.dir" value="${app.dir}/src" />
+    <!-- Build classpath -->
+    <path id="build.classpath" description="classpath">
+        <fileset dir="${basedir}/lib/JAX-WS2.1.2">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <!-- ================================================================== -->
+    <!-- Generating sources                                                 -->
+    <!-- ================================================================== -->
+    <target name="wsclientgen" description="wsclientgen">
+    	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" classpathref="build.classpath"/>
+    	<wsimport wsdl="http://localhost:8080/Services/HelloWorldService?WSDL" 
+    		sourcedestdir="${src.dir}" package="com.foshanshop.ws.client" keep="true" 
+    		verbose="true" destdir="${app.dir}/bin"/>
+    </target>
+</project>

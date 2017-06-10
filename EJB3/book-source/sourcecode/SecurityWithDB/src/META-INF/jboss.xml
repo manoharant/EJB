@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+  <!--  Bug in EJB3 of JBoss 4.0.4 GA  
+  <security-domain>java:/jaas/foshanshop</security-domain>
+  -->
+  <security-domain>foshanshop</security-domain>
+  <unauthenticated-principal>AnonymousUser</unauthenticated-principal>
+</jboss>

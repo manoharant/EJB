@@ -1,0 +1,17 @@
+/.idea
+*.iml
+
+# Ignore .svn metadata files
+.svn
+
+#Ignore Maven generated target folders
+target
+
+# Eclipse files
+.classpath
+.settings
+.project
+
+#Idea
+/.idea
+*.iml

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="2.807" errors="0" skipped="0" tests="4" name="org.roussev.persistence.UserDaoTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64"/>
+    <property name="java.vm.version" value="20.2-b06"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb"/>
+    <property name="java.runtime.version" value="1.6.0_27-b07"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb"/>
+    <property name="java.endorsed.dirs" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter6100109960061127265.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64/server:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb/target/test-classes:/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb/target/classes:/home/manoharanthambi/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/manoharanthambi/.m2/repository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-entitymanager/3.2.0.ga/hibernate-entitymanager-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-annotations/3.2.0.ga/hibernate-annotations-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate/3.2.0.ga/hibernate-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/net/sf/ehcache/ehcache/1.2/ehcache-1.2.jar:/home/manoharanthambi/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/manoharanthambi/.m2/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar:/home/manoharanthambi/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar:/home/manoharanthambi/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/manoharanthambi/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/home/manoharanthambi/.m2/repository/cglib/cglib/2.1_3/cglib-2.1_3.jar:/home/manoharanthambi/.m2/repository/asm/asm/1.5.3/asm-1.5.3.jar:/home/manoharanthambi/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/home/manoharanthambi/.m2/repository/jboss/javassist/3.3.ga/javassist-3.3.ga.jar:/home/manoharanthambi/.m2/repository/jboss/jboss-archive-browsing/5.0.0alpha-200607201-119/jboss-archive-browsing-5.0.0alpha-200607201-119.jar:/home/manoharanthambi/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/manoharanthambi/.m2/repository/javax/ejb/ejb-api/3.0/ejb-api-3.0.jar:/home/manoharanthambi/.m2/repository/junit/junit/4.0/junit-4.0.jar:/home/manoharanthambi/.m2/repository/mysql/mysql-connector-java/5.0.2/mysql-connector-java-5.0.2.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="3.2.0-27-generic"/>
+    <property name="user.home" value="/home/manoharanthambi"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="manoharanthambi"/>
+    <property name="java.class.path" value="/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb/target/test-classes:/home/manoharanthambi/sample-projects/EJB/ejb3-maven/roussev-ejb/target/classes:/home/manoharanthambi/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/manoharanthambi/.m2/repository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-entitymanager/3.2.0.ga/hibernate-entitymanager-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-annotations/3.2.0.ga/hibernate-annotations-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate/3.2.0.ga/hibernate-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/net/sf/ehcache/ehcache/1.2/ehcache-1.2.jar:/home/manoharanthambi/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/manoharanthambi/.m2/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar:/home/manoharanthambi/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar:/home/manoharanthambi/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/manoharanthambi/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/home/manoharanthambi/.m2/repository/cglib/cglib/2.1_3/cglib-2.1_3.jar:/home/manoharanthambi/.m2/repository/asm/asm/1.5.3/asm-1.5.3.jar:/home/manoharanthambi/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/home/manoharanthambi/.m2/repository/jboss/javassist/3.3.ga/javassist-3.3.ga.jar:/home/manoharanthambi/.m2/repository/jboss/jboss-archive-browsing/5.0.0alpha-200607201-119/jboss-archive-browsing-5.0.0alpha-200607201-119.jar:/home/manoharanthambi/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/manoharanthambi/.m2/repository/javax/ejb/ejb-api/3.0/ejb-api-3.0.jar:/home/manoharanthambi/.m2/repository/junit/junit/4.0/junit-4.0.jar:/home/manoharanthambi/.m2/repository/mysql/mysql-connector-java/5.0.2/mysql-connector-java-5.0.2.jar:"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter6100109960061127265.jar /tmp/surefire961523437972286621tmp /tmp/surefire6381275915927988141tmp"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_27"/>
+    <property name="java.ext.dirs" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/resources.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/rt.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/sunrsasign.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/jsse.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/jce.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/charsets.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/modules/jdk.boot.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="/home/manoharanthambi/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.316" classname="org.roussev.persistence.UserDaoTest" name="list"/>
+  <testcase time="0.055" classname="org.roussev.persistence.UserDaoTest" name="read"/>
+  <testcase time="0.088" classname="org.roussev.persistence.UserDaoTest" name="update"/>
+  <testcase time="0.054" classname="org.roussev.persistence.UserDaoTest" name="createDelete"/>
+</testsuite>

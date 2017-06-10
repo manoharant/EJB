@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="1" time="0.983" errors="0" skipped="0" tests="1" name="TestSuite">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.SESSION_MANAGER" value="local/manoharanthambi:@/tmp/.ICE-unix/1446,unix/manoharanthambi:/tmp/.ICE-unix/1446"/>
+    <property name="env.LESSOPEN" value="| /usr/bin/lesspipe %s"/>
+    <property name="localRepository" value="/home/manoharanthambi/.m2/repository"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.boot.class.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/resources.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/rt.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/sunrsasign.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/jsse.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/jce.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/charsets.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/modules/jdk.boot.jar:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/classes"/>
+    <property name="env.PWD" value="/home/manoharanthambi/sample-projects/learntechnology-maven-jee"/>
+    <property name="env.XDG_SESSION_COOKIE" value="cd0fd554f93935859233516d00000008-1318432441.449685-1006846448"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="env.LANG" value="en_US.UTF-8"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.version" value="1.6.0_27-b07"/>
+    <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/gnome.default.path"/>
+    <property name="env.DISPLAY" value=":0.0"/>
+    <property name="user.name" value="manoharanthambi"/>
+    <property name="env._" value="/home/manoharanthambi/Downloads/apache-maven-2.2.1/bin/mvn"/>
+    <property name="env.USER" value="manoharanthambi"/>
+    <property name="env.SHELL" value="/bin/bash"/>
+    <property name="env.DESKTOP_SESSION" value="gnome"/>
+    <property name="env.XDG_DATA_DIRS" value="/usr/share/gnome:/usr/local/share/:/usr/share/"/>
+    <property name="env.NLSPATH" value="/usr/dt/lib/nls/msg/%L/%N.cat"/>
+    <property name="env.PATH" value="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/manoharanthambi/Downloads/jdk1.6.0_27/bin:/home/manoharanthambi/Downloads/apache-maven-2.2.1/bin:/home/manoharanthambi/Downloads/apache-ant-1.8.2/bin"/>
+    <property name="user.language" value="en"/>
+    <property name="sun.boot.library.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64"/>
+    <property name="classworlds.conf" value="/home/manoharanthambi/Downloads/apache-maven-2.2.1/bin/m2.conf"/>
+    <property name="java.version" value="1.6.0_27"/>
+    <property name="user.timezone" value="Asia/Dubai"/>
+    <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-zrHh4ESCRc,guid=774d800c447ae97ce6382dbc0000002f"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="env.COMPIZ_CONFIG_PROFILE" value="ubuntu"/>
+    <property name="env.SSH_AGENT_PID" value="1479"/>
+    <property name="java.endorsed.dirs" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/endorsed"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="env.SHLVL" value="1"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="env.GDMSESSION" value="gnome"/>
+    <property name="env.GDM_KEYBOARD_LAYOUT" value="us"/>
+    <property name="user.country" value="US"/>
+    <property name="env.GNOME_KEYRING_PID" value="1427"/>
+    <property name="java.home" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="env.LOGNAME" value="manoharanthambi"/>
+    <property name="os.version" value="2.6.38-11-generic"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.version" value="20.2-b06"/>
+    <property name="env.LANGUAGE" value="en_US:en"/>
+    <property name="env.JAVA_HOME" value="/home/manoharanthambi/Downloads/jdk1.6.0_27"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="env.TERM" value="xterm"/>
+    <property name="env.WINDOWPATH" value="7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="env.GDM_LANG" value="en_US.utf8"/>
+    <property name="user.home" value="/home/manoharanthambi"/>
+    <property name="env.OLDPWD" value="/home/manoharanthambi/sample-projects/learntechnology-maven-jee"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.WINDOWID" value="56623135"/>
+    <property name="java.library.path" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64/server:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="maven.home" value="/home/manoharanthambi/Downloads/apache-maven-2.2.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher &quot;install&quot;"/>
+    <property name="java.class.path" value="/home/manoharanthambi/Downloads/apache-maven-2.2.1/boot/classworlds-1.1.jar"/>
+    <property name="env.UBUNTU_MENUPROXY" value="libappmenu.so"/>
+    <property name="env.XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="env.HOME" value="/home/manoharanthambi"/>
+    <property name="env.ANT_HOME" value="/home/manoharanthambi/Downloads/apache-ant-1.8.2"/>
+    <property name="surefire.test.class.path" value="/home/manoharanthambi/sample-projects/learntechnology-maven-jee/lt-ejb-jar/target/test-classes:/home/manoharanthambi/sample-projects/learntechnology-maven-jee/lt-ejb-jar/target/classes:/home/manoharanthambi/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/manoharanthambi/.m2/repository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-entitymanager/3.2.0.ga/hibernate-entitymanager-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate-annotations/3.2.0.ga/hibernate-annotations-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/org/hibernate/hibernate/3.2.0.ga/hibernate-3.2.0.ga.jar:/home/manoharanthambi/.m2/repository/net/sf/ehcache/ehcache/1.2/ehcache-1.2.jar:/home/manoharanthambi/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/manoharanthambi/.m2/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar:/home/manoharanthambi/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar:/home/manoharanthambi/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/manoharanthambi/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/home/manoharanthambi/.m2/repository/cglib/cglib/2.1_3/cglib-2.1_3.jar:/home/manoharanthambi/.m2/repository/asm/asm/1.5.3/asm-1.5.3.jar:/home/manoharanthambi/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/home/manoharanthambi/.m2/repository/jboss/javassist/3.3.ga/javassist-3.3.ga.jar:/home/manoharanthambi/.m2/repository/jboss/jboss-archive-browsing/5.0.0alpha-200607201-119/jboss-archive-browsing-5.0.0alpha-200607201-119.jar:/home/manoharanthambi/.m2/repository/hsqldb/hsqldb/1.8.0.7/hsqldb-1.8.0.7.jar:/home/manoharanthambi/.m2/repository/mysql/mysql-connector-java/5.0.5/mysql-connector-java-5.0.5.jar:/home/manoharanthambi/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/manoharanthambi/.m2/repository/javax/ejb/ejb-api/3.0/ejb-api-3.0.jar:/home/manoharanthambi/.m2/repository/org/testng/testng/5.8/testng-5.8-jdk15.jar:/home/manoharanthambi/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="env.LD_LIBRARY_PATH" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64/server:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/amd64:/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/../lib/amd64"/>
+    <property name="env.LS_COLORS" value="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/keyring-C6CSxC/ssh"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.ext.dirs" value="/home/manoharanthambi/Downloads/jdk1.6.0_27/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="user.dir" value="/home/manoharanthambi/sample-projects/learntechnology-maven-jee/lt-ejb-jar"/>
+    <property name="env.XAUTHORITY" value="/var/run/gdm/auth-for-manoharanthambi-N8HRy9/database"/>
+    <property name="env.MAVEN_HOME" value="/home/manoharanthambi/Downloads/apache-maven-2.2.1"/>
+    <property name="env.MANDATORY_PATH" value="/usr/share/gconf/gnome.mandatory.path"/>
+    <property name="env.GTK_MODULES" value="canberra-gtk-module"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="env.COLORTERM" value="gnome-terminal"/>
+    <property name="basedir" value="/home/manoharanthambi/sample-projects/learntechnology-maven-jee/lt-ejb-jar"/>
+    <property name="env.ORBIT_SOCKETDIR" value="/tmp/orbit-manoharanthambi"/>
+    <property name="env.USERNAME" value="manoharanthambi"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="env.GNOME_KEYRING_CONTROL" value="/tmp/keyring-C6CSxC"/>
+    <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-gnome:/etc/xdg"/>
+    <property name="env.LESSCLOSE" value="/usr/bin/lesspipe %s %s"/>
+  </properties>
+  <testcase time="0.112" classname="net.learntechnology.persistence.UserDAOTest" name="getUsers">
+    <failure message="org.hibernate.exception.SQLGrammarException: Cannot open connection" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.ejb.AbstractEntityManagerImpl.throwPersistenceException(AbstractEntityManagerImpl.java:647)
+	at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:73)
+	at net.learntechnology.persistence.dao.UserDAOBean.getUsers(UserDAOBean.java:27)
+	at net.learntechnology.persistence.UserDAOTest.getUsers(UserDAOTest.java:24)
+Caused by: org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:67)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:29)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:420)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:144)
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:139)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1560)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:661)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:224)
+	at org.hibernate.loader.Loader.doList(Loader.java:2144)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2028)
+	at org.hibernate.loader.Loader.list(Loader.java:2023)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:393)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:338)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:172)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1121)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:79)
+	at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:64)
+	... 31 more
+Caused by: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Unknown database &apos;learntechnology_db&apos;
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2941)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:868)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3340)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1238)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2743)
+	at com.mysql.jdbc.Connection.&lt;init&gt;(Connection.java:1553)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:110)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:417)
+	... 45 more
+</failure>
+  </testcase>
+</testsuite>

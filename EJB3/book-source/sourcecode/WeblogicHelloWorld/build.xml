@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!-- ======================================================================= -->
+<!-- EJB3 WeblogicHelloWorld build file                                      -->
+<!-- ======================================================================= -->
+<project name="WeblogicHelloWorld" default="ear" basedir="..">
+	<property name="app.dir" value="${basedir}\WeblogicHelloWorld" />
+	<property name="src.dir" value="${app.dir}\src" />
+	<property name="weblogic.home" value="C:\bea\wlserver_10.3"  description="weblogic产品所在目录,本书安装在C:\bea\wlserver_10.3"/>
+	<property name="wls.username" value="weblogic" description="登录用户名,默认为weblogic"/>
+	<property name="wls.password" value="weblogic" description="登录密码,默认为weblogic"/>
+	<property name="wls.hostname" value="localhost" description="主机名称"/>
+	<property name="wls.port" value="7001" description="所在端口,默认为7001"/>
+	<property name="wls.server.name" value="examplesServer" description="weblogic中的目标服务器,默认为examplesServer"/>
+	<property name="build.dir" value="${app.dir}\build" />
+	<property name="build.classes.dir" value="${build.dir}\classes" />
+	<!-- Build classpath -->
+	<path id="build.classpath">
+		<fileset dir="${basedir}\lib\javaee">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${weblogic.home}\server\lib">
+			<include name="weblogic.jar" />
+		</fileset>
+		<pathelement location="${build.classes.dir}" />
+	</path>
+	<!-- 定义一个Ant任务标签 -->
+	<taskdef name="wldeploy" classname="weblogic.ant.taskdefs.management.WLDeploy" classpathref="build.classpath"/>
+	<!-- =================================================================== -->
+	<!-- Prepares the build directory                                        -->
+	<!-- =================================================================== -->
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Compiles the source code                                            -->
+	<!-- =================================================================== -->
+	<target name="compile" depends="prepare" description="编绎">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on" deprecation="on" optimize="off" includes="com/**">
+			<classpath refid="build.classpath" />
+		</javac>
+	</target>
+
+	<target name="ear" depends="compile" description="创建JavaEE发布包">
+		<jar jarfile="${app.dir}\HelloWorld.jar">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/**/*.class" />
+			</fileset>
+		</jar>
+	    <war warfile="${app.dir}\HelloWorld.war" webxml="${app.dir}\web\WEB-INF\web.xml">
+	      <fileset dir="${app.dir}/web">
+	        <include name="*.*"/>
+	      </fileset>
+	    </war>
+		<ear earfile="${app.dir}\HelloWorld.ear" appxml="${app.dir}\META-INF\application.xml">
+			<fileset dir="${app.dir}">
+				<include name="HelloWorld.jar"/>
+				<include name="HelloWorld.war"/>
+			</fileset>
+		</ear>
+		<delete file="${app.dir}\HelloWorld.jar" />
+		<delete file="${app.dir}\HelloWorld.war" />
+	</target>
+	<!-- =================================================================== -->
+	<!-- 需要先启动weblogic                                                    -->
+	<!-- =================================================================== -->
+	<target name="deploy" depends="undeploy,ear" description="把应用发布到weblogic，部署名称为HelloWorld，你不再需要手工部署">
+		<wldeploy action="deploy" name="HelloWorld"
+	      source="${app.dir}\HelloWorld.ear" targets="${wls.server.name}"
+	      user="${wls.username}" password="${wls.password}"
+	      adminurl="t3://${wls.hostname}:${wls.port}"
+	      debug="true" verbose="true" failonerror="true"/>
+		  <echo message="你可以通过http://${wls.hostname}:${wls.port}/HelloWorld/Test.jsp调用EJB"/>
+		  <echo message="或者通过单元测试用例HelloWorldTest调用EJB,需要使用JDK1.6，并且把[weblogic home]\wlserver_10.3\server\lib\weblogic.jar加入到类路径下"/>
+	</target>
+
+	<target name="undeploy" description="卸载部署名称为HelloWorld的应用">
+		<wldeploy action="undeploy" name="HelloWorld" targets="${wls.server.name}"
+			user="${wls.username}" password="${wls.password}"
+			adminurl="t3://${wls.hostname}:${wls.port}"
+		    debug="false" verbose="false" failonerror="false" />
+	</target>
+	
+	<!-- =================================================================== -->
+	<!-- Cleans up generated stuff                                           -->
+	<!-- =================================================================== -->
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+</project>
+

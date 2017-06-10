@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/26/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao
+END
+UserDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/24/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/UserDaoImpl.java
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/24/trunk/ejb3-maven/roussev-ejb/src/main/java/org/roussev/app/dao/UserDao.java
+END

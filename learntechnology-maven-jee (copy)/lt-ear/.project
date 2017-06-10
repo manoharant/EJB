@@ -1,0 +1,10 @@
+<projectDescription>
+  <name>lt-ear</name>
+  <comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects>
+    <project>lt-ejb-jar</project>
+    <project>lt-web</project>
+  </projects>
+  <buildSpec/>
+  <natures/>
+</projectDescription>

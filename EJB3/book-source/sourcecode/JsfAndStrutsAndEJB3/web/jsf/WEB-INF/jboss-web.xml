@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Service Reference 4.2//EN"
+"http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd">
+<jboss-web>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/CatalogLocalDAO</ejb-ref-name>
+		<local-jndi-name>jbossCMS/CatalogDAOBean/local</local-jndi-name>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/NewsLocalDAO</ejb-ref-name>
+		<local-jndi-name>jbossCMS/NewsDAOBean/local</local-jndi-name>
+	</ejb-local-ref>
+</jboss-web>

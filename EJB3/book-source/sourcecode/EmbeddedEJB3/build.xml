@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================= -->
+<!-- WEB EmbeddedEJB3 build file                                                       -->
+<!-- ======================================================================= -->
+
+<project name="EmbeddedEJB3" default="web-war" basedir=".">
+
+	<property environment="env" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="resouce.dir" value="${basedir}/web" />
+	<property name="build.classes.dir" value="${resouce.dir}/WEB-INF/classes" />
+	
+	<target name="compile" description="编绎">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on" deprecation="on" optimize="off" includes="**" />
+	</target>
+			
+	<target name="web-war" description="创建WEB发布包" depends="compile">
+	    <war warfile="${basedir}/EmbeddedEJB3.war" webxml="${resouce.dir}/WEB-INF/web.xml">
+	      <fileset dir="${resouce.dir}">
+	        <include name="**"/>	      	
+	      </fileset>	 
+	      <exclude name="${resouce.dir}/WEB-INF/web.xml" />
+	    </war>
+	</target>
+</project>
+

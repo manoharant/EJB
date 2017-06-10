@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	
+	<application>
+	
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		
+		<locale-config>
+			<default-locale>en_US</default-locale>
+		</locale-config>
+		
+		<variable-resolver>
+			org.springframework.web.jsf.DelegatingVariableResolver
+		</variable-resolver>
+		
+	</application>
+	
+	<validator>
+		<validator-id>emailValidator</validator-id>
+		<validator-class>
+			blogspot.sezera.exampleproject.validator.EmailValidator
+		</validator-class>
+	</validator>
+	
+	<managed-bean>
+		<managed-bean-name>userController</managed-bean-name>
+		<managed-bean-class>
+			blogspot.sezera.exampleproject.controller.UserController
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>service</property-name>
+			<value>#{userService}</value>
+		</managed-property>
+	</managed-bean>
+	
+</faces-config>

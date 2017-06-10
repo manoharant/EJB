@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.989 sec <<< FAILURE!
+getUsers(net.learntechnology.persistence.UserDAOTest)  Time elapsed: 0.117 sec  <<< FAILURE!
+javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.ejb.AbstractEntityManagerImpl.throwPersistenceException(AbstractEntityManagerImpl.java:647)
+	at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:73)
+	at net.learntechnology.persistence.dao.UserDAOBean.getUsers(UserDAOBean.java:27)
+	at net.learntechnology.persistence.UserDAOTest.getUsers(UserDAOTest.java:24)
+Caused by: org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:67)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:29)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:420)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:144)
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:139)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1560)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:661)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:224)
+	at org.hibernate.loader.Loader.doList(Loader.java:2144)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2028)
+	at org.hibernate.loader.Loader.list(Loader.java:2023)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:393)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:338)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:172)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1121)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:79)
+	at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:64)
+	... 31 more
+Caused by: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Unknown database 'learntechnology_db'
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2941)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:868)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3340)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1238)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2743)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1553)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:110)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:417)
+	... 45 more
+

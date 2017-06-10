@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" skipfailedinvocationCounts="false" verbose="0" name="Failed suite [MySuite]" junit="false" annotations="JDK">
+  <test name="OurTests(failed)" junit="false" annotations="JDK">
+    <groups>
+      <run>
+        <include name="unit"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="net.learntechnology.persistence.UserDAOTest">
+        <methods>
+          <include name="runAfterClass"/>
+          <include name="getUsers"/>
+          <include name="runBeforeClass"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

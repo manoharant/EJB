@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!-- ======================================================================= -->
+<!-- WEB JsfAndstrutsAndEJB3 build file                                      -->
+<!-- ======================================================================= -->
+<project name="JsfAndstrutsAndEJB3" default="jboss-ear" basedir=".">
+	<property environment="env" />
+	<property name="src.dir" value="${basedir}\src" />
+	<property name="lib.dir" value="${basedir}\lib" />
+	<property name="resouce.dir" value="${basedir}\web" />
+	<property name="build.dir" value="${basedir}\build" />
+	<property name="build.classes.dir" value="${build.dir}\classes" />
+	<!-- jboss 环境设置 -->
+	<property name="jboss.home" value="${env.JBOSS_HOME}" />
+	<property name="jboss.server.config" value="default" />
+	<!-- weblogic 环境设置 -->
+	<property name="weblogic.home" value="C:\bea\wlserver_10.3"  description="weblogic产品所在目录"/>
+	<property name="wls.username" value="weblogic" description="登录用户名,默认为weblogic"/>
+	<property name="wls.password" value="weblogic" description="登录密码,默认为weblogic"/>
+	<property name="wls.hostname" value="localhost" description="主机名称"/>
+	<property name="wls.port" value="7001" description="所在端口,默认为7001"/>
+	<property name="wls.server.name" value="examplesServer" description="weblogic中的目标服务器,默认为examplesServer"/>
+	<property name="jsf.lib" value="${weblogic.home}/common/deployable-libraries/jsf-1.2.war"/>
+	
+	<path id="build.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${build.classes.dir}" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+			
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+	</target>
+			
+	<target name="compile" depends="prepare" description="编绎">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on" deprecation="on" optimize="off" includes="com/**">
+			<classpath refid="build.classpath" />
+		</javac>
+	</target>
+
+	<target name="struts-web" description="struts web应用打包">		
+		<copy todir="${resouce.dir}\struts\WEB-INF\lib">
+			<fileset dir="${lib.dir}\struts-1.3.8">
+				<include name="*.jar" />
+			</fileset>
+		</copy>		
+	    <war warfile="${basedir}\strutscms.war" webxml="${resouce.dir}\struts\WEB-INF\web.xml">
+	    	<fileset dir="${resouce.dir}\struts">
+		    	<include name="*.jsp"/>
+			</fileset>
+	    	<classes dir="${build.classes.dir}"> 
+	    		<include name="com/foshanshop/struts/**/*"/>
+	    		<include name="com/foshanshop/utils/*"/>
+	    	</classes>
+	    	<lib dir="${resouce.dir}\struts\WEB-INF\lib"></lib>
+	    	<webinf dir="${resouce.dir}\struts\WEB-INF">
+	    		<include name="struts-config.xml"/>
+	    		<include name="page/**/*"/>
+	    		<!-- 由于Jboss-4.2.2GA未完全支持servlet2.5，所以为jboss单独提供了一个jboss-web.xml文件 -->
+	    		<include name="jboss-web.xml"/>
+	    		<include name="weblogic.xml"/>
+	    	</webinf>
+	    </war>
+	</target>
+	
+	<target name="jsf-web" description="jsf web应用打包">			
+	    <war warfile="${basedir}\jsfcms.war" webxml="${resouce.dir}\jsf\WEB-INF\web.xml">
+	    	<fileset dir="${resouce.dir}\jsf">
+		    	<include name="**/*.jsp"/>
+			</fileset>
+	    	<classes dir="${build.classes.dir}"> 
+	    		<include name="com/foshanshop/jsf/*.class"/>
+	    		<include name="com/foshanshop/utils/*.class"/>
+	    	</classes>
+	    	<webinf dir="${resouce.dir}\jsf\WEB-INF">
+	    		<include name="faces-config.xml"/>
+	    		<!-- 由于Jboss-4.2.2GA未完全支持servlet2.5，所以为jboss单独提供了一个jboss-web.xml文件 -->
+	    		<include name="jboss-web.xml"/>
+	    		<!-- 对于部署到weblogic的web应用，需要引用JSF1.2共享库，否则会出现找不到类的错误。-->
+	    		<include name="weblogic.xml"/>
+	    	</webinf>
+	    </war>
+	</target>
+		
+	<target name="weblogic-ear" depends="compile,struts-web,jsf-web" description="为weblogic打包EAR">
+		<jar jarfile="${basedir}\cms.jar">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/foshanshop/bean/*.class" />
+				<include name="com/foshanshop/dao/**/*.class" />
+			</fileset>
+			<metainf file="${basedir}\META-INF\weblogic\persistence.xml"/>
+		</jar>
+		<ear earfile="${basedir}\weblogicCMS.ear" appxml="${basedir}\META-INF\application.xml">
+			<fileset dir="${basedir}">
+				<include name="cms.jar"/>
+				<include name="strutscms.war"/>
+				<include name="jsfcms.war"/>
+			</fileset>
+		</ear>
+		<delete file="${basedir}\cms.jar" />
+		<delete file="${basedir}\strutscms.war" />
+		<delete file="${basedir}\jsfcms.war" />
+	</target>
+			
+	<target name="jboss-ear" depends="compile,struts-web,jsf-web" description="为jboss打包EAR">
+		<jar jarfile="${basedir}\cms.jar">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/foshanshop/bean/*.class" />
+				<include name="com/foshanshop/dao/**/*.class" />
+			</fileset>
+			<metainf file="${basedir}\META-INF\jboss\persistence.xml"/>
+		</jar>
+		<ear earfile="${basedir}\jbossCMS.ear" appxml="${basedir}\META-INF\application.xml">
+			<fileset dir="${basedir}">
+				<include name="cms.jar"/>
+				<include name="strutscms.war"/>
+				<include name="jsfcms.war"/>
+			</fileset>
+		</ear>
+		<delete file="${basedir}\cms.jar" />
+		<delete file="${basedir}\strutscms.war" />
+		<delete file="${basedir}\jsfcms.war" />
+	</target>
+					
+	<target name="deployToJboss" description="部署到Jboss" depends="jboss-ear">
+		<delete file="${jboss.home}\server\${jboss.server.config}\deploy\jbossCMS.ear"/>
+		<copy file="${basedir}\jbossCMS.ear" todir="${jboss.home}\server\${jboss.server.config}\deploy" />
+		<echo message="你可以通过http://localhost:8080/strutscms 访问struts客户端"/>
+		<echo message="你可以通过http://localhost:8080/jsfcms 访问JSF客户端"/>
+	</target>
+	
+	<target name="deployToWeblogic" depends="weblogic-ear" description="部署到Weblogic，因为weblogic.jar依赖JDK1.6，所以必须在JDK1.6下执行该任务">
+		<taskdef name="wldeploy" classname="weblogic.ant.taskdefs.management.WLDeploy" classpath="${weblogic.home}\server\lib\weblogic.jar"/>
+		<wldeploy action="undeploy" name="weblogicCMS" targets="${wls.server.name}"
+			user="${wls.username}" password="${wls.password}"
+			adminurl="t3://${wls.hostname}:${wls.port}"
+		    debug="false" verbose="false" failonerror="false" />
+		<!-- 删除 jsf1.2 共享库 -->
+		<wldeploy action="undeploy" name="jsf" targets="${wls.server.name}"
+		    user="${wls.username}" password="${wls.password}"
+		    adminurl="t3://${wls.hostname}:${wls.port}"
+			debug="false" verbose="false" failonerror="false" />
+		<!-- 部署 jsf1.2 共享库 -->
+		<wldeploy action="deploy" name="jsf"
+			source="${jsf.lib}" library="true" targets="${wls.server.name}"
+			user="${wls.username}" password="${wls.password}"
+			adminurl="t3://${wls.hostname}:${wls.port}"
+			failonerror="true" />
+		<wldeploy action="deploy" name="weblogicCMS"
+			source="${basedir}\weblogicCMS.ear" targets="${wls.server.name}"
+			user="${wls.username}" password="${wls.password}"
+			adminurl="t3://${wls.hostname}:${wls.port}"
+			debug="true" verbose="true" failonerror="true"/>
+		<echo message="你可以通过http://${wls.hostname}:${wls.port}/strutscms 访问struts客户端"/>
+		<echo message="你可以通过http://${wls.hostname}:${wls.port}/jsfcms 访问JSF客户端"/>
+	</target>
+</project>

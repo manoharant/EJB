@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app xmlns="http://www.bea.com/ns/weblogic/90">
+  <!--
+  必须定义到JSF1.2共享库的引用，否则JSF将不可用，出现缺少类错误。共享库在${wl.home}/common/deployable-libraries/jsf-1.2.war,
+  你可以通过管理台像安装web应用那样安装jsf-1.2.war，不过在选择安装类型时应指定为library，默认的安装名称为jsf
+  -->
+  <library-ref>
+    <library-name>jsf</library-name>
+    <specification-version>1.2</specification-version>
+  </library-ref>
+</weblogic-web-app>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+              version="1.2">
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>print</from-outcome>
+            <to-view-id>/news/outpage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!-- 新闻列表页面 -->
+    <navigation-rule>
+        <from-view-id>/news/list.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <!-- 修改新闻页面 -->
+            <to-view-id>/news/editNews.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!-- 查看新闻页面 --> 
+    <navigation-rule>
+        <from-view-id>/news/view.jsp</from-view-id>
+    </navigation-rule>
+    <!-- 添加新闻页面 -->
+    <navigation-rule>
+        <from-view-id>/news/AddNews.jsp</from-view-id>
+    </navigation-rule>
+	<!-- 目录列表页面 -->
+    <navigation-rule>
+        <from-view-id>/news/catalog/list.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <!-- 修改目录页面 -->
+            <to-view-id>/news/catalog/editcatalog.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!-- 添加目录页面 -->
+    <navigation-rule>
+        <from-view-id>/news/catalog/Addcatalog.jsp</from-view-id>
+    </navigation-rule>
+    <!-- 目录分页处理Bean -->
+    <managed-bean>
+        <managed-bean-name>catalogList</managed-bean-name>
+        <managed-bean-class>com.foshanshop.jsf.CatalogList</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+		  <property-name>firstResult</property-name> 
+		  <value>#{!empty param.firstResult? param.firstResult : 0}</value> 
+		</managed-property>
+		<managed-property>
+		  <property-name>maxResult</property-name> 
+		  <value>#{!empty param.maxResult? param.maxResult : 5}</value> 
+		</managed-property>
+    </managed-bean> 
+    <!-- 目录添加/修改/删除Bean -->
+    <managed-bean>
+        <managed-bean-name>catalogAction</managed-bean-name>
+        <managed-bean-class>com.foshanshop.jsf.CatalogAction</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+		  <property-name>id</property-name> 
+		  <value>#{!empty param.id? param.id : 0}</value> 
+		</managed-property>
+    </managed-bean>
+    <!-- 新闻分页处理Bean -->
+    <managed-bean>
+        <managed-bean-name>newsList</managed-bean-name>
+        <managed-bean-class>com.foshanshop.jsf.NewsList</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+		  <property-name>firstResult</property-name> 
+		  <value>#{!empty param.firstResult? param.firstResult : 0}</value> 
+		</managed-property>
+		<managed-property>
+		  <property-name>maxResult</property-name> 
+		  <value>#{!empty param.maxResult? param.maxResult : 5}</value> 
+		</managed-property>
+    </managed-bean>  
+    <!-- 查看新闻Bean -->
+    <managed-bean>
+        <managed-bean-name>newsView</managed-bean-name>
+        <managed-bean-class>com.foshanshop.jsf.View</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+		  <property-name>id</property-name> 
+		  <value>#{!empty param.id? param.id : 0}</value> 
+		</managed-property>
+    </managed-bean>  
+    <!-- 新闻添加/修改/删除Bean -->
+    <managed-bean>
+        <managed-bean-name>newsAction</managed-bean-name>
+        <managed-bean-class>com.foshanshop.jsf.NewsAction</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+		  <property-name>id</property-name> 
+		  <value>#{!empty param.id? param.id : 0}</value> 
+		</managed-property>
+    </managed-bean>  
+     
+</faces-config>

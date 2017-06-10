@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+<head>
+<title>New User</title>
+</head>
+<body>
+	<f:view>
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputLabel value="UserName "></h:outputLabel>
+					</td>
+					<td><h:inputText id="email" value="#{userController.username}">
+							<f:validator validatorId="emailValidator" />
+							<a4j:support event="onkeyup" requestDelay="300" reRender="output" />
+						</h:inputText></td>
+					<td><h:outputLabel id="output">
+							<h:message for="email" />
+						</h:outputLabel></td>
+				</tr>
+				<tr>
+					<td><h:outputLabel value="Password"></h:outputLabel>
+					</td>
+					<td><h:inputSecret value="#{userController.password}"></h:inputSecret><br />
+					</td>
+				</tr>
+			</table>
+			<h:commandButton value="Create User"
+				action="#{userController.createUser}"></h:commandButton>
+		</h:form>
+	</f:view>
+</body>
+</html>

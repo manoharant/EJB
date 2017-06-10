@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--
+    vi:ts=2:sw=2:expandtab:
+    -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+    <parent>
+        <groupId>org.jboss.ejb3.singleton</groupId>
+        <artifactId>jboss-ejb3-singleton-parent</artifactId>
+        <version>1.0.3-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!-- Model Information -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Artifact Information  -->
+    <groupId>org.jboss.ejb3.singleton</groupId>
+    <artifactId>jboss-ejb3-singleton-deployer</artifactId>
+    <packaging>jar</packaging>
+    <name>JBoss EJB 3.1+ Singleton Container Deployer</name>
+    <url>http://www.jboss.org</url>
+    <description>A MC based deployer for deploying a Singleton container for @Singleton beans</description>
+    
+    <properties>
+        <version.org.jboss.deployers>2.0.8.GA</version.org.jboss.deployers>
+        <version.ejb3.reflect.proxy>1.0.0-alpha-1</version.ejb3.reflect.proxy>
+        <version.reloaded.naming>0.2.0</version.reloaded.naming>
+        <version.org.jboss.ejb3.instantiator>1.0.0-alpha-4</version.org.jboss.ejb3.instantiator>
+        <version.switchboard>1.0.0-alpha-9</version.switchboard>
+        <version.jboss.injection>1.0.0-alpha-6</version.jboss.injection>
+    </properties>
+    
+    <build>
+        <plugins>
+            <!-- Assembly Plugin -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-4</version>
+                <executions>
+                    <!--  Build singleton deployer "package" -->
+                  <execution>
+                    <id>build-singleton-deployer-package</id> 
+                    <phase>package</phase>
+                    <goals>
+                      <goal>single</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                  <descriptors>
+                    <descriptor>src/assembly/package-assembler.xml</descriptor>
+                  </descriptors>
+                </configuration>
+            </plugin>
+        </plugins>
+    
+    </build>
+    
+    <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.ejb3.instantiator</groupId>
+            <artifactId>jboss-ejb3-instantiator-spi</artifactId>
+            <version>${version.org.jboss.ejb3.instantiator}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.jboss.ejb3.singleton</groupId>
+            <artifactId>jboss-ejb3-singleton-aop-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        
+        <dependency>
+            <groupId>org.jboss.ejb3.singleton</groupId>
+            <artifactId>jboss-ejb3-singleton-proxy-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.jboss.ejb3.proxy</groupId>
+            <artifactId>proxy-reflect</artifactId>
+            <version>${version.ejb3.reflect.proxy}</version>
+        </dependency>
+        
+        <!-- Naming -->
+        <dependency>
+            <groupId>org.jboss.reloaded.naming</groupId>
+            <artifactId>jboss-reloaded-naming-spi</artifactId>
+            <version>${version.reloaded.naming}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.jboss.reloaded.naming</groupId>
+            <artifactId>jboss-reloaded-naming-deployers</artifactId>
+            <version>${version.reloaded.naming}</version>
+        </dependency>
+        
+        <!-- JBoss deployers -->
+        <dependency>
+          <groupId>org.jboss.deployers</groupId>
+          <artifactId>jboss-deployers-core-spi</artifactId>
+          <version>${version.org.jboss.deployers}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.jboss.deployers</groupId>
+          <artifactId>jboss-deployers-structure-spi</artifactId>
+          <version>${version.org.jboss.deployers}</version>
+        </dependency>
+        
+        <!-- EJB metadata -->
+        <dependency>
+            <groupId>org.jboss.metadata</groupId>
+            <artifactId>jboss-metadata-ejb</artifactId>
+        </dependency>
+        
+        <!-- SwitchBoard -->
+        <dependency>
+            <groupId>org.jboss.switchboard</groupId>
+            <artifactId>jboss-switchboard-spi</artifactId>
+            <version>${version.switchboard}</version>
+        </dependency>
+        
+        <!--  jboss-injection -->
+        <dependency>
+            <groupId>org.jboss.injection</groupId>
+            <artifactId>jboss-injection-manager</artifactId>
+            <version>${version.jboss.injection}</version>
+        </dependency>
+        <!--  For LazyEEInjector -->           
+        <dependency>
+            <groupId>org.jboss.injection</groupId>
+            <artifactId>jboss-injection-mc-impl</artifactId>
+            <version>${version.jboss.injection}</version>
+        </dependency>
+        
+        <!-- Get rid of this! it's required for ServiceMBeanSupport class
+            which is being extended by EJB3Deployment -->
+        <dependency>
+          <groupId>org.jboss.jbossas</groupId>
+          <artifactId>jboss-as-system-jmx</artifactId>
+          <version>5.1.0.GA</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.microcontainer</groupId>
+                    <artifactId>jboss-kernel</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.man</groupId>
+                    <artifactId>jboss-managed</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.man</groupId>
+                    <artifactId>jboss-metatype</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss</groupId>
+                    <artifactId>jboss-vfs</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!-- ***************************** -->
+        <!--  Test dependencies -->
+        <!-- ***************************** -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    
+    </dependencies>
+
+</project>	
